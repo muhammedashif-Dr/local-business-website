@@ -11,12 +11,19 @@ A polished local business website for a boutique with:
 - Backend: Node.js, Express.js
 - Database: MongoDB with Mongoose
 
+## Requirements
+- Node.js (v18 or newer)
+- MongoDB running locally or a MongoDB Atlas connection string
+- npm
+
 ## Run locally
 1. Install dependencies: npm install
-2. Start MongoDB locally
-3. Run the server: npm start
-4. Open http://localhost:5000
+2. Make sure MongoDB is running
+3. Create a .env file with:
+   - PORT=5000
+   - MONGO_URI=mongodb://127.0.0.1:27017/loom-thread
+4. Run the server: npm start
+5. Open http://localhost:5000
 
 ## Admin login
-- ID: MUHAMMEDASHIF
-- Password: Ashif@0112
+Use your own secure admin credentials by updating the login logic in server.js before deploying.
