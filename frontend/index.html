@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loom & Thread | Sustainable & Timeless Local Boutique</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Loom & Thread is a local Portland boutique specializing in slow-fashion, minimalist design, and organic apparel crafted by ethical local artisans. Visit us today.">
+  <meta name="keywords" content="sustainable fashion, local boutique Portland, organic clothing, minimalist style, slow fashion, linen dresses, ethical apparel">
+  
+  <!-- Google Fonts: Italiana & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>Spend $150+ for free carbon-neutral shipping or select in-store pickup</p>
+  </div>
+
+  <!-- Header Section -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">LOOM & THREAD</span>
+        <span class="logo-sub">SUSTAINABLE APPAREL</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#about" class="nav-link">Our Story</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#visit" class="nav-link">Visit Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#portal" class="btn btn-outline nav-cta">Portal</a>
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/hero_boutique.png" alt="Loom & Thread Boutique Interior">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-reveal">
+      <span class="hero-tag">Slow Fashion • Local Craft</span>
+      <h1 class="hero-title">Timeless Style, Mindfully Crafted</h1>
+      <p class="hero-subtitle">Discover a curated collection of organic fabrics, earth-toned hues, and minimalist silhouettes made to last a lifetime.</p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn btn-primary">Browse Collection</a>
+        <a href="#visit" class="btn btn-secondary">Visit Our Boutique</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll Down</span>
+      <i data-lucide="chevron-down" class="bounce"></i>
+    </div>
+  </section>
+
+  <!-- Brand Values Section -->
+  <section class="values" id="values">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Our Ethos</span>
+        <h2>Why We Do Things Differently</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="values-grid">
+        <div class="value-card scroll-reveal">
+          <div class="value-icon">
+            <i data-lucide="leaf"></i>
+          </div>
+          <h3>100% Organic Fibers</h3>
+          <p>We source only organic linen, Tencel, and GOTS-certified organic cotton. Better for your skin, better for the planet.</p>
+        </div>
+        
+        <div class="value-card scroll-reveal">
+          <div class="value-icon">
+            <i data-lucide="heart"></i>
+          </div>
+          <h3>Ethically Handcrafted</h3>
+          <p>Every piece is made in fair-wage workshops. We prioritize craftsmanship and fair labor practices over rapid output.</p>
+        </div>
+        
+        <div class="value-card scroll-reveal">
+          <div class="value-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3>Supporting Local Art</h3>
+          <p>We partner with regional jewelry makers, ceramicists, and leather artisans to bring you unique, local statement items.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Collections / Product Showcase Section -->
+  <section class="collections" id="collections">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Shop Local</span>
+        <h2>The Curated Capsule</h2>
+        <p class="section-desc">Preview our current seasonal favorites. Filter by category to explore.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-controls scroll-reveal">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="new">New Arrivals</button>
+        <button class="filter-btn" data-filter="essentials">Essentials</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid scroll-reveal">
+        <!-- Product 1 -->
+        <div class="product-card" data-category="new" data-id="1">
+          <div class="product-img-wrapper">
+            <img src="assets/product_dress.png" alt="Loom & Thread Terra Cotta Dress" class="product-img">
+            <span class="product-tag">New Season</span>
+            <button class="quick-view-btn">Quick View</button>
+          </div>
+          <div class="product-info">
+            <span class="product-material">100% French Linen</span>
+            <h3 class="product-title">Ember Midi Linen Dress</h3>
+            <span class="product-price">$128.00</span>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="essentials" data-id="2">
+          <div class="product-img-wrapper">
+            <img src="assets/product_jacket.png" alt="Sage Linen Utility Jacket" class="product-img">
+            <span class="product-tag">Best Seller</span>
+            <button class="quick-view-btn">Quick View</button>
+          </div>
+          <div class="product-info">
+            <span class="product-material">Organic Cotton Canvas</span>
+            <h3 class="product-title">Sage Utility Canvas Jacket</h3>
+            <span class="product-price">$145.00</span>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="accessories" data-id="3">
+          <div class="product-img-wrapper">
+            <img src="assets/product_accessories.png" alt="Loom & Thread Tote & Slides Combo" class="product-img">
+            <button class="quick-view-btn">Quick View</button>
+          </div>
+          <div class="product-info">
+            <span class="product-material">Recycled Cotton & Veg Leather</span>
+            <h3 class="product-title">Market Canvas Tote & Slide Set</h3>
+            <span class="product-price">$110.00</span>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="essentials" data-id="4">
+          <div class="product-img-wrapper">
+            <!-- Reuse fabrics image as a placeholder for neutral pants for high-end feel -->
+            <img src="assets/about_fabrics.png" alt="Linen Lounge Set" class="product-img">
+            <button class="quick-view-btn">Quick View</button>
+          </div>
+          <div class="product-info">
+            <span class="product-material">Organic Linen-Tencel Blend</span>
+            <h3 class="product-title">Linen Lounge Modular Set</h3>
+            <span class="product-price">$165.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-side scroll-reveal">
+          <div class="about-img-frame">
+            <img src="assets/about_fabrics.png" alt="Organic fabrics pile Loom and Thread">
+          </div>
+        </div>
+        
+        <div class="about-text-side scroll-reveal">
+          <span class="section-tag">Our Roots</span>
+          <h2>Crafted for Life, Not the Landfill</h2>
+          <div class="section-divider-left"></div>
+          <p class="about-lead">Founded in 2021 in Portland, Oregon, Loom & Thread began with a simple question: Can clothing be both beautiful and completely restorative to the earth?</p>
+          <p>We reject the fast-fashion cycle of synthetic blends and seasonal waste. Instead, we design small, versatile capsules using biodegradable natural fibers that grow softer with every wash.</p>
+          <p>Every piece is sourced directly from ethical local weavers and regional sewing cooperatives. When you wear Loom & Thread, you support local livelihoods and sustainable agricultural standards.</p>
+          <div class="about-author">
+            <span class="author-name">Elena Rose</span>
+            <span class="author-role">Founder, Loom & Thread</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Reviews</span>
+        <h2>What Our Community Says</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"The Ember linen midi dress is my absolute favorite. The terracotta shade is gorgeous, it fits perfectly, and I love knowing that it was made ethically in a small local batch."</p>
+          <div class="testimonial-author">
+            <div class="author-initials">SC</div>
+            <div>
+              <span class="author-name">Sarah C.</span>
+              <span class="author-loc">Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"I visited the Portland boutique last weekend and booked a stylist appointment. Elena was so helpful, helping me style an entire capsule wardrobe. Incredible service!"</p>
+          <div class="testimonial-author">
+            <div class="author-initials">MH</div>
+            <div>
+              <span class="author-name">Marcus H.</span>
+              <span class="author-loc">Boutique Customer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="stars">
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+            <i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"The fabric quality is outstanding. Synthetics always make me sweat, but their organic linen is so breathable and feels like premium quality. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-initials">EL</div>
+            <div>
+              <span class="author-name">Emma L.</span>
+              <span class="author-loc">Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit & Booking Section -->
+  <section class="visit" id="visit">
+    <div class="container">
+      <div class="visit-grid">
+        <!-- Map & Info Column -->
+        <div class="visit-info scroll-reveal">
+          <span class="section-tag">Locate Us</span>
+          <h2>Visit Our Portland Boutique</h2>
+          <div class="section-divider-left"></div>
+          
+          <div class="contact-details">
+            <div class="detail-item">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <h4>Boutique Address</h4>
+                <p>720 NW 23rd Ave, Portland, OR 97210</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i data-lucide="clock"></i>
+              <div>
+                <h4>Store Hours</h4>
+                <p>Tuesday – Saturday: 11:00 AM – 6:00 PM</p>
+                <p>Sunday: 12:00 PM – 5:00 PM (Closed Mondays)</p>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <i data-lucide="phone"></i>
+              <div>
+                <h4>Call & Order Inquiries</h4>
+                <p>+1 (503) 555-0142</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Map Div -->
+          <div id="map-container" class="map-container">
+            <!-- Leaflet map injects here -->
+          </div>
+        </div>
+
+        <!-- Appointment / Contact Form Column -->
+        <div class="visit-form scroll-reveal" id="stylist-form-container">
+          <h3>Book a Personal Stylist Appointment</h3>
+          <p>Enjoy a private 45-minute styling session with our designers. Sip local herbal tea while we help curate your perfect custom wardrobe capsule.</p>
+          
+          <form id="stylist-booking-form" class="styled-form">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="name" placeholder="E.g., Jane Doe" required>
+            </div>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(503) 555-0199" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <select id="time" name="time" required>
+                  <option value="" disabled selected>Select time slot</option>
+                  <option value="11:30">11:30 AM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="14:30">2:30 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Sizing & Style Preferences (Optional)</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Tell us your standard sizes, styling goals, or fabrics you prefer..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Confirm Appointment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portal-section" id="portal">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <span class="section-tag">Portal</span>
+        <h2>Customer & Admin Appointment Access</h2>
+        <p class="section-desc">Customers sign up or log in to view their own appointments. Admin users can see every customer booking from one place.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="portal-auth-section" id="portal-auth-section">
+        <div class="portal-grid">
+          <div class="portal-card scroll-reveal" id="customer-panel-card">
+            <h3>Customer Panel</h3>
+            <p>Create an account to book a stylist appointment and view only your bookings.</p>
+
+            <form id="customer-signup-form" class="portal-form">
+              <input type="text" name="name" placeholder="Full name" required>
+              <input type="email" name="email" placeholder="Email address" required>
+              <input type="password" name="password" placeholder="Password" required>
+              <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+
+            <form id="customer-login-form" class="portal-form">
+              <input type="email" name="email" placeholder="Email address" required>
+              <input type="password" name="password" placeholder="Password" required>
+              <button type="submit" class="btn btn-secondary btn-block">Log In</button>
+            </form>
+          </div>
+
+          <div class="portal-card scroll-reveal" id="admin-panel-card">
+            <h3>Admin Panel</h3>
+            <p>Use the admin login to see all appointments submitted by customers.</p>
+
+            <form id="admin-login-form" class="portal-form">
+              <input type="email" name="email" placeholder="Admin email" required>
+              <input type="password" name="password" placeholder="Admin password" required>
+              <button type="submit" class="btn btn-primary btn-block">Admin Log In</button>
+            </form>
+
+            <div class="portal-demo">
+              <strong>Demo admin:</strong> admin@loomthread.com / admin123
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portal-dashboard" id="portal-dashboard">
+        <div class="portal-status" id="portal-status">You are not signed in.</div>
+        <button class="btn btn-outline btn-block" id="portal-logout-btn" type="button">Log Out</button>
+        <div class="portal-summary" id="portal-summary"></div>
+        <div class="portal-appointments">
+          <h4 id="portal-heading">Appointments</h4>
+          <div id="portal-appointments-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="logo-text">LOOM & THREAD</h3>
+          <p>Slow fashion and organic, ethical textiles designed with care in the Pacific Northwest.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i data-lucide="pinterest"></i></a>
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#collections">New Arrivals</a></li>
+            <li><a href="#collections">The Essentials</a></li>
+            <li><a href="#collections">Accessories</a></li>
+            <li><a href="#about">Sustainability Ethos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Boutique Info</h4>
+          <ul>
+            <li><a href="#visit">Address & Directions</a></li>
+            <li><a href="#visit">Book styling session</a></li>
+            <li><a href="#">FAQ & Return Policy</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Join the Club</h4>
+          <p>Receive 10% off your first purchase and stay updated on batch drops and styling workshops.</p>
+          <form id="newsletter-form" class="newsletter-form">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe"><i data-lucide="arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Loom & Thread Sustainable Apparel. All rights reserved.</p>
+        <p>Built with care for a cleaner planet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-body-grid">
+        <div class="modal-img-side">
+          <img src="" alt="" id="modal-product-img">
+        </div>
+        <div class="modal-info-side">
+          <span class="modal-material" id="modal-product-material">Material</span>
+          <h2 class="modal-title" id="modal-product-title">Product Name</h2>
+          <span class="modal-price" id="modal-product-price">$0.00</span>
+          
+          <div class="modal-divider"></div>
+          
+          <p class="modal-description" id="modal-product-description">Description goes here...</p>
+          
+          <div class="modal-meta-box">
+            <div class="meta-item">
+              <i data-lucide="heart"></i>
+              <span>GOTS Certified Organic</span>
+            </div>
+            <div class="meta-item">
+              <i data-lucide="refresh-cw"></i>
+              <span>Carbon-Neutral Processing</span>
+            </div>
+          </div>
+
+          <div class="modal-sizes">
+            <h4>Available Sizes</h4>
+            <div class="size-chips">
+              <span>XS</span>
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+              <span>XL</span>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <a href="#visit" class="btn btn-primary modal-cta-btn">Book Fitting Session</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-notification">
+    <div class="toast-content">
+      <i data-lucide="check-circle" class="toast-icon"></i>
+      <div class="toast-message">
+        <h4 id="toast-title">Success</h4>
+        <p id="toast-body">Your message has been received.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Custom Javascript -->
+  <script src="/app.js"></script>
+</body>
+</html>

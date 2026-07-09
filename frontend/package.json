@@ -1,0 +1,11 @@
+{
+  "name": "loom-thread-frontend",
+  "version": "1.0.0",
+  "description": "Frontend launcher for Loom & Thread boutique website",
+  "scripts": {
+    "dev": "npm run dev --prefix ../backend",
+    "start": "npm start --prefix ../backend",
+    "postinstall": "npm install --prefix ../backend"
+  },
+  "dependencies": {}
+}
