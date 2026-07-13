@@ -538,16 +538,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         const result = await response.json();
 
-        if (!response.ok) {
-          showToast('Booking Failed', result.message || 'Unable to save booking.');
-          return;
+        if (response.ok) {
+          showToast('Booking Successful', 'Your appointment has been reserved!');
+          bookingForm.reset();
+        } else {
+          showToast('Booking Failed', result.message || 'Something went wrong.');
         }
-
-        showToast(
-          'Appointment Requested!',
-          `Thank you ${bookingData.name}, we will confirm your session on ${bookingData.date} at ${bookingData.time} via email shortly.`
-        );
-        bookingForm.reset();
       } catch (error) {
         console.error(error);
         showToast('Booking Failed', 'Server error.');
