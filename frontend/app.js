@@ -1,3 +1,5 @@
+const API_URL = 'https://local-business-website.onrender.com/api';
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide Icons
   lucide.createIcons();
@@ -281,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     portalAppointmentsList.innerHTML = '<p>Loading appointments...</p>';
 
     try {
-      const response = await fetch(`/api/bookings?role=${role === 'admin' ? 'admin' : 'customer'}&email=${encodeURIComponent(userEmail)}`);
+      const response = await fetch(`${API_URL}/bookings?role=${role === 'admin' ? 'admin' : 'customer'}&email=${encodeURIComponent(userEmail)}`);
       const bookings = await response.json();
 
       portalSummary.innerHTML = `
@@ -385,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const response = await fetch('/api/signup', {
+        const response = await fetch(`${API_URL}/signup`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -419,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const response = await fetch('/api/login', {
+        const response = await fetch(`${API_URL}/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -451,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = formData.get('password').toString();
 
       try {
-        const response = await fetch('/api/login', {
+        const response = await fetch(`${API_URL}/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
@@ -529,7 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const response = await fetch('/api/bookings', {
+        const response = await fetch(`${API_URL}/bookings`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(bookingData)
